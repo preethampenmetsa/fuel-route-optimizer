@@ -66,6 +66,10 @@ class RouteOptimizationView(APIView):
         if cached_response:
             cached_response = cached_response.copy()
             cached_response["is_cached"] = True
+            cached_response["response_time_ms"] = round(
+                (time.time() - request_start_time) * 1000,
+                2
+            )
 
             return Response(
                 cached_response,

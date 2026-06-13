@@ -132,8 +132,6 @@ STATIC_URL = 'static/'
 
 GOOGLE_MAPS_API_KEY = env("GOOGLE_MAPS_API_KEY")
 
-GOOGLE_GEOCODE_DELAY = 0.05
-
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS":
         "drf_spectacular.openapi.AutoSchema",
