@@ -101,6 +101,8 @@ def get_route(start: str, end: str) -> dict:
 
     route = routes[0]
 
+    overview_polyline = route["overview_polyline"]["points"]
+
     route_coords = _extract_route_points(route)
 
     if not route_coords:
@@ -145,6 +147,7 @@ def get_route(start: str, end: str) -> dict:
 
     return {
         "route_coords": route_coords,
+        "route_polyline": overview_polyline,
         "total_distance_miles": total_distance_miles,
         "start_address": start_address,
         "end_address": end_address,

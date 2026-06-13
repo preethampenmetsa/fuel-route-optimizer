@@ -133,3 +133,27 @@ STATIC_URL = 'static/'
 GOOGLE_MAPS_API_KEY = env("GOOGLE_MAPS_API_KEY")
 
 GOOGLE_GEOCODE_DELAY = 0.05
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS":
+        "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Fuel Route Optimization API",
+    "DESCRIPTION": (
+        "API for finding optimal fuel stops "
+        "along a route while minimizing "
+        "fuel cost."
+    ),
+    "VERSION": "1.0.0",
+}
+
+CACHES = {
+    "default": {
+        "BACKEND":
+            "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION":
+            "fuel-route-cache",
+    }
+}

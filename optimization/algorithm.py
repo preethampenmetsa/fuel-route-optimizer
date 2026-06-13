@@ -362,25 +362,49 @@ exi
         )
 
         stops.append(
-            {
-                "truckstop_name":
-                    stop_station["truckstop_name"],
-                "route_mile":
-                    round(
-                        stop_station["route_mile"],
-                        2
-                    ),
-                "price":
-                    stop_station["retail_price"],
-                "gallons_purchased":
-                    round(
-                        gallons_to_buy,
-                        2
-                    ),
-                "cost":
-                    round(cost, 2),
-            }
-        )
+        {
+            "truckstop_name":
+                stop_station["truckstop_name"],
+
+            "address":
+                stop_station.get("address"),
+
+            "city":
+                stop_station.get("city"),
+
+            "state":
+                stop_station.get("state"),
+
+            "latitude":
+                stop_station.get("latitude"),
+
+            "longitude":
+                stop_station.get("longitude"),
+
+            "route_mile":
+                round(
+                    stop_station["route_mile"],
+                    2
+                ),
+
+            "price":
+                float(
+                    stop_station["retail_price"]
+                ),
+
+            "gallons_purchased":
+                round(
+                    gallons_to_buy,
+                    2
+                ),
+
+            "cost":
+                round(
+                    cost,
+                    2
+                ),
+        }
+    )
 
     total_gallons_needed = (
         route_distance / MPG
