@@ -285,7 +285,7 @@ exi
         # WHERE TO STOP
         stop_station = min(
             reachable,
-            key=lambda s: s["retail_price"]
+            key=lambda s: (s["retail_price"], -s["route_mile"])
         )
 
         distance_to_station = (
