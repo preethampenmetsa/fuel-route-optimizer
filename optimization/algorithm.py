@@ -234,8 +234,7 @@ def find_optimal_fuel_stops(
 ):
     """
     Main optimization algorithm.
-
-    Returns:
+exi
         {
             "stops": [],
             "total_cost": float,
@@ -350,10 +349,9 @@ def find_optimal_fuel_stops(
                 - fuel_in_tank
             )
 
-        cost = (
-            gallons_to_buy
-            * stop_station["retail_price"]
-        )
+        price = float(stop_station["retail_price"])
+
+        cost = gallons_to_buy * price
 
         fuel_in_tank += gallons_to_buy
 
